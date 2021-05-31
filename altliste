@@ -1,0 +1,63 @@
+#!/bin/bash
+echo "#VELKOMMEN#"
+echo " "
+echo "---Hva vil du gjøre?---"
+
+echo " "
+
+echo "[1] Koble til database"
+echo " "
+echo "[2] Juster lysstyrke"
+echo " "
+echo "[3] Juster volum" 
+echo " "
+echo "[4] Cheatsheet"
+echo " "
+echo "[5] Firefox"
+echo " "
+echo "[6] Mount ekstern HD"
+echo " "
+echo "[7] Hjelpmeg"
+echo " "
+echo "[x] Avbryt"
+
+read alternativ
+
+case $alternativ in
+	1)
+		echo "Kobler til..."
+		mysql -u root -p
+		;;
+	2)
+		echo "Åpner lyspanel"
+		bash lysstyrke
+		;;
+	3)
+		echo "Åpner lydpanel"
+	        bash lydstyrke	
+		;;
+	4)
+		echo "cheatsheet"
+		bash cheat
+		;;
+	5)
+		echo "Åpner nettleser"
+		firefox
+		;;
+	6)
+		echo "mountet ekstern harddisk"
+		mount -t ../../dev/sdb1 Harddisk
+		;;
+
+	7)	cat hjelpmeg
+		;;
+
+	x)
+		echo "Hadet"
+		exit
+		;;
+	*)
+		echo "FEIL INPUT!"
+		;;
+esac
+bash altliste
