@@ -1,0 +1,31 @@
+#!/bin/bash
+
+echo "lydstyrke"
+echo "valg:"
+echo "[+] lyd opp"
+echo "[-] lyd ned"
+echo "[m] slå av lyd"
+echo "[p] slå på lyd"
+echo "[x] ut"
+
+read saus
+
+case $saus in
+	+)
+		amixer set 'Master' 10%+
+		;;
+	-)
+		amixer set 'Master' 10%-
+		;;
+	m)
+		amixer set 'Master' 100%-
+		;;
+	p)
+		amixer set 'Master' 60%+
+		;;
+	x)
+		exit
+		;;
+	
+esac
+bash lydstyrke

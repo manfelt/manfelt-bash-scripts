@@ -1,0 +1,21 @@
+#!/bin/bash
+echo "lysstrke"
+echo "valg:"
+echo "[+] lys opp"
+echo "[-] lys ned"
+echo "[x] ut"
+
+read sus
+
+case $sus in
+	+)
+		xbacklight +15
+		;;
+	-)
+		xbacklight -15
+		;;
+	x)
+		exit
+		;;
+esac
+bash lysstyrke
